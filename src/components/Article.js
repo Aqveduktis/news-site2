@@ -3,16 +3,14 @@ import { Eye } from 'icons/Eye'
 import './article.css'
 
 // background - image: url(http://image.jpg);
-export const Article = (props) => (
+export const Article = (props) => {
+  const { title, url, urlToImage } = props.article  
+  return (
   <div
-    className="article"
-    style={{ backgroundImage: `url(${props.article.urlToImage})` }}>
-    <h1>{props.article.title}</h1>
-
-    <div className="moreDetails">
-      <a href={props.article.url}>
-        <Eye />
-      </a>
-    </div>
+    className="col-sm-6 col-md-4 col-lg-3 article">
+    <h1>{title}</h1>
+<img className="card" src = {urlToImage}></img>  
+      <a href={url}>More information</a>
   </div>
 )
+}
